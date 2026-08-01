@@ -65,7 +65,7 @@ check \
 
 check \
 "API Health" \
-"curl -sf http://localhost:4000/api/health >/dev/null || curl -sf http://localhost:4100/api/health >/dev/null"
+curl -sf http://localhost:4100/api/v1/health >/dev/null
 
 
 check \
