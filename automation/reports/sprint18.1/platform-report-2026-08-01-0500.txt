@@ -1,0 +1,21 @@
+XaaSGrid Platform Report
+========================
+Sat Aug  1 05:00:31 AM UTC 2026
+
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS          PORTS                                         NAMES
+b72e4ccc5993   infrastructure-backend   "uvicorn app.main:ap…"   3 minutes ago   Up 17 seconds   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   eaas-backend
+1da4f15739fe   postgres:15              "docker-entrypoint.s…"   3 minutes ago   Up 17 seconds   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   eaas-postgres
+bf4ca6b35568   redis:7                  "docker-entrypoint.s…"   3 minutes ago   Up 17 seconds   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp   eaas-redis
+ab1345467804   eaasgrid-platform-api    "docker-entrypoint.s…"   23 hours ago    Up 17 seconds   0.0.0.0:4100->4000/tcp, [::]:4100->4000/tcp   xaasgrid-api
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           790M  2.0M  788M   1% /run
+/dev/sda2        20G   15G  4.2G  78% /
+tmpfs           3.9G     0  3.9G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sdc1       196G   20G  166G  11% /data
+/dev/sdb         79G   23G   52G  31% /data/cache
+tmpfs           790M   16K  790M   1% /run/user/1000
+overlay          79G   23G   52G  31% /data/cache/docker/overlay2/7ef54c43081ba6e2269c6f70c25c17869e44506d910c1f6476d7d0b7b6661bfa/merged
+overlay          79G   23G   52G  31% /data/cache/docker/overlay2/d157d3c2e105ea84f8ca1a0137ae59506acd7f86cc04d5f7a62396af71d8d262/merged
+overlay          79G   23G   52G  31% /data/cache/docker/overlay2/5dfceb4f2410af294db945cb87cfaa5a1daf96b92a55de7fdffc46879acf5404/merged
+overlay          79G   23G   52G  31% /data/cache/docker/overlay2/a254b4859b621ee3f0cc90b9d0ec21f57562b81c4473d9d84315ff9f122ea55e/merged

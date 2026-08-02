@@ -1,0 +1,14 @@
+====================================
+ XaaSGrid Bootstrap Deployment
+ Sprint 18.1
+====================================
+Sat Aug  1 04:19:28 AM UTC 2026
+OS: Ubuntu 24.04.4 LTS
+CPU: 8 cores
+RAM: 7 GB
+Disk Free: 5G
+Docker installed
+Docker version 29.5.3, build d1c06ef
+Docker Compose version v2.27.0
+v20.20.2
+10.8.2

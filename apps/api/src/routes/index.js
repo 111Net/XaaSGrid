@@ -2,16 +2,47 @@ const express = require("express");
 
 const router = express.Router();
 
-const healthRoutes = require("./health.routes");
-const companyRoutes = require("./company.routes");
-const investorRoutes = require("./investor.routes");
-const dashboardRoutes = require("./dashboard.routes");
-const databaseRoutes = require("./database.routes");
 
-router.use("/health", healthRoutes);
-router.use("/company", companyRoutes);
-router.use("/investor", investorRoutes);
-router.use("/dashboard", dashboardRoutes);
-router.use("/database", databaseRoutes);
+router.use(
+    "/health",
+    require("./health.routes")
+);
+
+
+router.use(
+    "/platform",
+    require("./platform")
+);
+
+
+router.use(
+    "/company",
+    require("./company.routes")
+);
+
+
+router.use(
+    "/investor",
+    require("./investor.routes")
+);
+
+
+router.use(
+    "/dashboard",
+    require("./dashboard.routes")
+);
+
+
+router.use(
+    "/billing",
+    require("./billing")
+);
+
+
+router.use(
+    "/database",
+    require("./database.routes")
+);
+
 
 module.exports = router;

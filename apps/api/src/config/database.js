@@ -1,26 +1,14 @@
-require("dotenv").config({
-  path: "../../../.env"
+const { Pool } = require("pg");
+
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL
 });
 
-const { createClient } = require("@supabase/supabase-js");
-const WebSocket = require("ws");
+pool.on("error", (error) => {
+    console.error(
+        "PostgreSQL pool error:",
+        error.message
+    );
+});
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_SERVICE_ROLE_KEY =
-  process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-let supabase = null;
-
-if (SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY) {
-  supabase = createClient(
-    SUPABASE_URL,
-    SUPABASE_SERVICE_ROLE_KEY,
-    {
-      realtime: {
-        transport: WebSocket
-      }
-    }
-  );
-}
-
-module.exports = supabase;
+module.exports = pool;

@@ -1,0 +1,28 @@
+services:
+
+  api:
+    build:
+      context: ./apps/api
+    container_name: xaasgrid-api
+    ports:
+      - "4100:4000"
+    environment:
+      DATABASE_URL: postgresql://eaas_user:xxxxx@postgres:5432/eaas_db
+    depends_on:
+      - postgres
+
+
+  postgres:
+    image: postgres:15
+    container_name: xaasgrid-postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+  redis:
+    image: redis:7
+    container_name: xaasgrid-redis
+
+
+volumes:
+  postgres_data:

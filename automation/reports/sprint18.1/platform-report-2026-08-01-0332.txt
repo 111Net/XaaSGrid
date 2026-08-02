@@ -1,0 +1,17 @@
+XaaSGrid Platform Report
+========================
+Sat Aug  1 03:32:57 AM UTC 2026
+
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+42a1b4ded0fa   infrastructure-backend   "uvicorn app.main:ap…"   30 seconds ago   Up 28 seconds   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   eaas-backend
+f871ee5a2db3   postgres:15              "docker-entrypoint.s…"   30 seconds ago   Up 29 seconds   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   eaas-postgres
+0f189e442ff1   redis:7                  "docker-entrypoint.s…"   30 seconds ago   Up 29 seconds   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp   eaas-redis
+ab1345467804   eaasgrid-platform-api    "docker-entrypoint.s…"   21 hours ago     Up 27 minutes   0.0.0.0:4100->4000/tcp, [::]:4100->4000/tcp   xaasgrid-api
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           790M  2.0M  788M   1% /run
+/dev/sda2        20G   15G  4.2G  78% /
+tmpfs           3.9G     0  3.9G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sdc1       196G   20G  166G  11% /data
+tmpfs           790M   16K  790M   1% /run/user/1000
+/dev/sdb         79G   23G   52G  31% /data/cache

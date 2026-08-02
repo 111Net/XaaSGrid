@@ -2,27 +2,14 @@ const express = require("express");
 
 const router = express.Router();
 
-
 router.get("/status", (req, res) => {
 
-
     res.json({
-
-        platform: "XaaSGrid",
-
+        platform: "EaaSGrid",
         status: "operational",
-
-        version: "1.0.0",
-
-        environment:
-            process.env.NODE_ENV || "development",
-
-        timestamp: new Date()
-
+        version: "1.0"
     });
 
-
 });
-
 
 module.exports = router;
