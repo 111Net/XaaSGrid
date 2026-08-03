@@ -1,27 +1,35 @@
 
-const users=[
-{
- id:1,
- email:"admin@xaasgrid.com",
- password:"admin123",
- role:"admin"
-}
-];
+const bcrypt=require("bcrypt");
+
+const users=[];
 
 
-function login(email,password)
+async function createUser(email,password,role="user")
 {
 
-const user =
-users.find(
-u=>u.email===email &&
-u.password===password
-);
+const passwordHash =
+await bcrypt.hash(password,10);
 
-return user;
+
+return {
+email,
+passwordHash,
+role
+};
 
 }
 
 
-module.exports={login};
+async function verifyPassword(password,hash)
+{
+
+return bcrypt.compare(password,hash);
+
+}
+
+
+module.exports={
+createUser,
+verifyPassword
+};
 

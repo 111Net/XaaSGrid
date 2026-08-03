@@ -1,26 +1,15 @@
-const supabase = require("../config/supabase");
+
+const prisma=require("../database/prisma");
 
 
-async function getCompany(){
+async function getCompanies(){
 
-    const { data, error } = await supabase
-        .from("companies")
-        .select("*")
-        .order("created_at", { ascending:false })
-        .limit(1)
-        .single();
-
-
-    if(error){
-        throw new Error(error.message);
-    }
-
-
-    return data;
+return prisma.company.findMany();
 
 }
 
 
-module.exports = {
-    getCompany
+module.exports={
+getCompanies
 };
+
