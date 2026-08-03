@@ -1,0 +1,8 @@
+====================================
+Sprint 18.1 Phase 2 Repair
+Mon Aug  3 06:56:36 AM UTC 2026
+====================================
+./sprint18.1-backup-20260803-064522/docker-compose.yml
+./docker-compose.yml
+./backups/api-replacement-20260802-1158/docker-compose.yml
+Dashboard directory exists

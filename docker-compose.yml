@@ -1,25 +1,39 @@
 services:
 
-  api:
+  xaasgrid-api:
     build:
       context: ./apps/api
     container_name: xaasgrid-api
     ports:
-      - "4100:4000"
+      - "4000:4000"
     env_file:
       - .env
     environment:
       PORT: 4000
-      DATABASE_URL: postgresql://eaas_user:EAAS_Strong_2026!@postgres:5432/eaas_db
-      REDIS_URL: redis://redis:6379
+      DATABASE_URL: postgresql://eaas_user:EAAS_Strong_2026!@xaasgrid-postgres:5432/eaas_db
+      REDIS_URL: redis://xaasgrid-redis:6379
     depends_on:
-      postgres:
+      xaasgrid-postgres:
         condition: service_started
-      redis:
+      xaasgrid-redis:
         condition: service_started
+    restart: unless-stopped
 
 
-  postgres:
+  xaasgrid-dashboard:
+    build:
+      context: ./apps/dashboard
+    container_name: xaasgrid-dashboard
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:4000
+    depends_on:
+      - xaasgrid-api
+    restart: unless-stopped
+
+
+  xaasgrid-postgres:
     image: postgres:15
     container_name: xaasgrid-postgres
     environment:
@@ -30,13 +44,15 @@ services:
       - infrastructure_postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    restart: unless-stopped
 
 
-  redis:
+  xaasgrid-redis:
     image: redis:7
     container_name: xaasgrid-redis
     ports:
       - "6379:6379"
+    restart: unless-stopped
 
 
 volumes:

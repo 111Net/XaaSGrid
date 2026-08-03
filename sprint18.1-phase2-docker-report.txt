@@ -1,0 +1,71 @@
+====================================
+Sprint 18.1 Phase 2 Docker Foundation
+Mon Aug  3 06:53:39 AM UTC 2026
+====================================
+name: eaasgrid-platform
+services:
+  api:
+    build:
+      context: /data/eaasgrid-platform/apps/api
+      dockerfile: Dockerfile
+    container_name: xaasgrid-api
+    depends_on:
+      postgres:
+        condition: service_started
+        required: true
+      redis:
+        condition: service_started
+        required: true
+    environment:
+      DATABASE_URL: postgresql://eaas_user:EAAS_Strong_2026!@postgres:5432/eaas_db
+      JWT_SECRET: xaasgrid-development-secret-change-late
+      NODE_ENV: development
+      PORT: "4000"
+      REDIS_URL: redis://redis:6379
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 4000
+        published: "4100"
+        protocol: tcp
+  postgres:
+    container_name: xaasgrid-postgres
+    environment:
+      POSTGRES_DB: eaas_db
+      POSTGRES_PASSWORD: EAAS_Strong_2026!
+      POSTGRES_USER: eaas_user
+    image: postgres:15
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: infrastructure_postgres_data
+        target: /var/lib/postgresql/data
+        volume: {}
+  redis:
+    container_name: xaasgrid-redis
+    image: redis:7
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 6379
+        published: "6379"
+        protocol: tcp
+networks:
+  default:
+    name: eaasgrid-platform_default
+volumes:
+  infrastructure_postgres_data:
+    name: infrastructure_postgres_data
+    external: true
+NAMES               STATUS                  PORTS
+xaasgrid-api        Up Less than a second   0.0.0.0:4100->4000/tcp, [::]:4100->4000/tcp
+xaasgrid-postgres   Up 1 second             0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+xaasgrid-redis      Up 1 second             0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp

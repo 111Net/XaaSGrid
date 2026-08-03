@@ -1,0 +1,28 @@
+====================================
+Sprint 18.1 Phase 3-4 Validation
+Mon Aug  3 07:19:51 AM UTC 2026
+====================================
+NAMES                STATUS          PORTS
+xaasgrid-dashboard   Up 10 minutes   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+xaasgrid-api         Up 10 minutes   0.0.0.0:4000->4000/tcp, [::]:4000->4000/tcp
+xaasgrid-postgres    Up 10 minutes   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+xaasgrid-redis       Up 10 minutes   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+                                                  List of databases
+   Name    |   Owner   | Encoding |  Collate   |   Ctype    | ICU Locale | Locale Provider |    Access privileges    
+-----------+-----------+----------+------------+------------+------------+-----------------+-------------------------
+ eaas_db   | eaas_user | UTF8     | en_US.utf8 | en_US.utf8 |            | libc            | 
+ postgres  | eaas_user | UTF8     | en_US.utf8 | en_US.utf8 |            | libc            | 
+ template0 | eaas_user | UTF8     | en_US.utf8 | en_US.utf8 |            | libc            | =c/eaas_user           +
+           |           |          |            |            |            |                 | eaas_user=CTc/eaas_user
+ template1 | eaas_user | UTF8     | en_US.utf8 | en_US.utf8 |            | libc            | =c/eaas_user           +
+           |           |          |            |            |            |                 | eaas_user=CTc/eaas_user
+(4 rows)
+
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ eaas_user | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+PONG
+WARNING: Prisma directory not found under apps/api
+{"status":"ok","service":"XaaSGrid API","timestamp":"2026-08-03T07:19:53.565Z"}
