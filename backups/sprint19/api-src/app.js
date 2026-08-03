@@ -61,8 +61,6 @@ app.get("/api/health", (req,res)=>{
 });
 
 
-app.use("/api/auth", require("./auth/auth.routes"));
-
 app.use(
     "/api/v1",
     routes
