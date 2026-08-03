@@ -1,4 +1,4 @@
-const supabase = require("../database/prisma")
+const supabase = require("../config/database")
 
 exports.testDatabase = async (req, res) => {
     try {

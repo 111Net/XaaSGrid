@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const db = require("../database/prisma");
+const db = require("../config/database");
 
 
 router.get("/", (req, res) => {
