@@ -1,8 +1,8 @@
-const supabase = require("../database/prisma")
+const prisma = require("../database/prisma")
 
 exports.testDatabase = async (req, res) => {
     try {
-        const { data, error } = await supabase
+        const { data, error } = await prisma
             .from("companies")
             .select("*");
 

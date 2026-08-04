@@ -1,15 +1,15 @@
-const supabase = require("../database/prisma");
+const prisma = require("../database/prisma");
 
 async function testDatabaseConnection() {
 
-  if (!supabase) {
+  if (!prisma) {
     return {
       status: "not_configured",
       message: "Supabase credentials missing"
     };
   }
 
-  const { data, error } = await supabase
+  const { data, error } = await prisma
     .from("health_check")
     .select("*")
     .limit(1);

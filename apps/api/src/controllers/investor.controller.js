@@ -1,10 +1,10 @@
-const supabase = require("../database/prisma");
+const prisma = require("../database/prisma");
 
 
 exports.getInvestorProfile = async (req,res)=>{
 
 
-const {data,error}=await supabase
+const {data,error}=await prisma
 .from("investors")
 .select("*")
 .single();

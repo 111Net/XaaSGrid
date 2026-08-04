@@ -1,8 +1,8 @@
-const supabase = require("../database/prisma");
+const prisma = require("../database/prisma");
 
 exports.getDashboard = async (req, res) => {
 
-  const { data: investor, error } = await supabase
+  const { data: investor, error } = await prisma
     .from("investors")
     .select("*")
     .single();
