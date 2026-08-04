@@ -1,31 +1,22 @@
 # XaaSGrid Architecture
 
-## Platform Overview
+Everything-as-a-Service Platform
 
-XaaSGrid is an Everything-as-a-Service infrastructure platform.
+Components:
 
-## Core Components
-
-- Next.js Dashboard
-- Node.js API
+- API Layer
+- Dashboard
 - PostgreSQL Database
 - Redis Cache
-- Docker Deployment
+- Authentication
+- Billing Engine
+- Payment Framework
+- Customer Portal
+- Marketplace Foundation
 
-## Runtime Architecture
-
-User
- |
-Dashboard
- |
-API Gateway
- |
-PostgreSQL / Redis
-
-
-## Deployment Targets
+Deployment Targets:
 
 - VM
 - VPS
 - Cloud Infrastructure
-- Bare Metal
+

@@ -38,22 +38,3 @@ Documentation:
 See the docs directory.
 
 
-
----
-
-## Sprint 31.5 Platform Review
-
-XaaSGrid is an Everything-as-a-Service platform.
-
-Capabilities:
-
-- Infrastructure management
-- Customer portal
-- SaaS marketplace foundation
-- Billing foundation
-- Payment framework
-
-Deployment:
-
-VM | VPS | Cloud
-

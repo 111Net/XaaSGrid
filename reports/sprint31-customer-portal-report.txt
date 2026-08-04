@@ -1,0 +1,53 @@
+
+
+==========================================
+XaaSGrid Sprint 31 Certification
+Customer Portal & SaaS Experience
+==========================================
+
+
+Customer Identity:
+
+READY
+
+
+Customer Portal:
+
+READY
+
+
+Service Catalog:
+
+READY
+
+
+Subscription Engine:
+
+CONNECTED TO SPRINT 29
+
+
+Invoice Engine:
+
+CONNECTED TO SPRINT 29
+
+
+Payment Engine:
+
+CONNECTED TO SPRINT 30
+
+
+Marketplace Foundation:
+
+READY
+
+
+==========================================
+
+Next Sprint:
+
+Sprint 31.5
+
+Platform Branding,
+Documentation,
+UI Review
+

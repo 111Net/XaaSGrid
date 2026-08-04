@@ -1,16 +1,15 @@
-# XaaSGrid Deployment Guide
+# XaaSGrid Deployment
 
-## Requirements
+Supported:
 
-- Ubuntu 22.04+
-- Docker
-- Docker Compose
-- 4GB RAM minimum
+- Virtual Machines
+- VPS Providers
+- Cloud Platforms
 
-## Start Platform
+Services:
 
-docker compose up -d
+API
+Dashboard
+PostgreSQL
+Redis
 
-## Verify
-
-curl http://localhost:4000/api/health
