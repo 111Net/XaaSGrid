@@ -1,26 +1,19 @@
 
-"use client";
-
-import {useEffect,useState} from "react";
+import { getPlatformMetrics } from "../lib/api";
 
 
-export default function Home(){
-
-const [metrics,setMetrics]=useState<any>(null);
+export default async function Home(){
 
 
-useEffect(()=>{
+const metrics =
+await getPlatformMetrics();
 
-fetch("http://localhost:4000/api/platform/metrics")
-.then(r=>r.json())
-.then(setMetrics);
-
-},[]);
 
 
 return (
 
 <main style={{padding:"40px"}}>
+
 
 <h1>
 XaaSGrid Platform
@@ -32,6 +25,7 @@ Everything-as-a-Service Infrastructure Platform
 </h2>
 
 
+
 <section>
 
 <h3>
@@ -40,27 +34,27 @@ Platform Overview
 
 
 <p>
-Users: {metrics?.users ?? "..."}
+Users: {metrics.users}
 </p>
 
 
 <p>
-Companies: {metrics?.companies ?? "..."}
+Companies: {metrics.companies}
 </p>
 
 
 <p>
-Customers: {metrics?.customers ?? "..."}
+Customers: {metrics.customers}
 </p>
 
 
 <p>
-Monthly Revenue: {metrics?.monthlyRevenue ?? "..."}
+Audit Events: {metrics.auditEvents}
 </p>
 
 
 <p>
-Availability: {metrics?.availability ?? "..."}
+Availability: {metrics.availability}
 </p>
 
 
@@ -70,6 +64,7 @@ Availability: {metrics?.availability ?? "..."}
 </main>
 
 );
+
 
 }
 
