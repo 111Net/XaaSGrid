@@ -1,30 +1,29 @@
 
 const API_URL =
-process.env.NEXT_PUBLIC_API_URL ||
-"http://localhost:4000/api";
+process.env.INTERNAL_API_URL ||
+"http://xaasgrid-api:4000";
 
 
 export async function getPlatformMetrics(){
 
-const response =
-await fetch(
-`${API_URL}/platform/metrics`,
-{
-cache:"no-store"
-}
-);
+    const response = await fetch(
+        `${API_URL}/api/platform/metrics`,
+        {
+            cache:"no-store"
+        }
+    );
 
 
-if(!response.ok){
+    if(!response.ok){
 
-throw new Error(
-"Unable to retrieve platform metrics"
-);
+        throw new Error(
+            "Platform metrics API failed"
+        );
 
-}
+    }
 
 
-return response.json();
+    return response.json();
 
 }
 

@@ -1,0 +1,29 @@
+
+const API_URL =
+process.env.NEXT_PUBLIC_API_URL ||
+"http://192.168.100.21:4000/api";
+
+
+export async function getMetrics(){
+
+const res = await fetch(
+`${API_URL}/v1/platform/metrics`,
+{
+cache:"no-store"
+}
+);
+
+
+if(!res.ok){
+
+throw new Error(
+"Metrics API failed"
+);
+
+}
+
+
+return res.json();
+
+}
+

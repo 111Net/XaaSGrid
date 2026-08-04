@@ -1,0 +1,29 @@
+
+const API_URL =
+process.env.NEXT_PUBLIC_API_URL ||
+"http://192.168.100.21:4000/api";
+
+
+export async function getPlatformMetrics(){
+
+const response = await fetch(
+`${API_URL}/v1/platform/metrics`,
+{
+cache:"no-store"
+}
+);
+
+
+if(!response.ok){
+
+throw new Error(
+"Platform metrics request failed"
+);
+
+}
+
+
+return response.json();
+
+}
+
