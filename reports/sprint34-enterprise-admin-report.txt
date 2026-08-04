@@ -1,0 +1,34 @@
+
+==========================================
+XaaSGrid Sprint 34 Certification
+Enterprise Admin Console
+==========================================
+
+
+Enterprise API:
+READY
+
+
+Tenant Management:
+READY
+
+
+RBAC Integration:
+READY
+
+
+Dashboard:
+READY
+
+
+Documentation:
+READY
+
+
+Status:
+
+ENTERPRISE FOUNDATION ACTIVE
+
+
+==========================================
+

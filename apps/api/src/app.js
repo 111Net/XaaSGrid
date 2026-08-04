@@ -3,17 +3,13 @@ const express = require("express");
 const app = express();
 
 
-
 const routes = require("./routes");
-
 
 const corsMiddleware =
     require("./middleware/cors");
 
-
 const securityHeaders =
     require("./middleware/security");
-
 
 const logger =
     require("./middleware/logger");
@@ -46,8 +42,7 @@ app.get("/", (req,res)=>{
 
 
 
-
-app.get("/api/health", (req,res)=>{
+app.get("/api/health",(req,res)=>{
 
     res.json({
 
@@ -62,16 +57,39 @@ app.get("/api/health", (req,res)=>{
 });
 
 
-app.use("/api/auth", require("./auth/auth.routes"));
+
+// Authentication
 
 app.use(
-    "/api",
-    routes
+"/api/auth",
+require("./auth/auth.routes")
 );
 
 
 
+// Core API routes
 
+app.use(
+"/api",
+routes
+);
+
+
+
+// Sprint 34 Enterprise Administration
+
+const enterpriseRoutes =
+require("./enterprise/enterprise.routes");
+
+
+app.use(
+"/api/enterprise",
+enterpriseRoutes
+);
+
+
+
+// 404 handler MUST ALWAYS BE LAST
 
 app.use((req,res)=>{
 
