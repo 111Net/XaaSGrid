@@ -1,5 +1,22 @@
 
+"use client";
+
+import {useEffect,useState} from "react";
+
+
 export default function Home(){
+
+const [metrics,setMetrics]=useState<any>(null);
+
+
+useEffect(()=>{
+
+fetch("http://localhost:4000/api/platform/metrics")
+.then(r=>r.json())
+.then(setMetrics);
+
+},[]);
+
 
 return (
 
@@ -21,21 +38,31 @@ Everything-as-a-Service Infrastructure Platform
 Platform Overview
 </h3>
 
-<p>
-Services Online: 128
-</p>
 
 <p>
-Customers: 42
+Users: {metrics?.users ?? "..."}
 </p>
 
-<p>
-Monthly Revenue: ₦8.4M
-</p>
 
 <p>
-Availability: 99.9%
+Companies: {metrics?.companies ?? "..."}
 </p>
+
+
+<p>
+Customers: {metrics?.customers ?? "..."}
+</p>
+
+
+<p>
+Monthly Revenue: {metrics?.monthlyRevenue ?? "..."}
+</p>
+
+
+<p>
+Availability: {metrics?.availability ?? "..."}
+</p>
+
 
 </section>
 

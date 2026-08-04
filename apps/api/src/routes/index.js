@@ -2,47 +2,34 @@ const express = require("express");
 
 const router = express.Router();
 
-
 router.use(
-    "/health",
-    require("./health.routes")
+    "/dashboard",
+    require("./dashboard.routes")
 );
-
-
-router.use(
-    "/platform",
-    require("./platform")
-);
-
-
-router.use(
-    "/company",
-    require("./company.routes")
-);
-
 
 router.use(
     "/investor",
     require("./investor.routes")
 );
 
-
 router.use(
-    "/dashboard",
-    require("./dashboard.routes")
+    "/database",
+    require("./database.routes")
 );
 
+router.use(
+    "/company",
+    require("./company.routes")
+);
 
 router.use(
     "/billing",
     require("./billing")
 );
 
-
 router.use(
-    "/database",
-    require("./database.routes")
+    "/platform",
+    require("./platform")
 );
-
 
 module.exports = router;
