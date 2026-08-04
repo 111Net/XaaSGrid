@@ -9,22 +9,17 @@ router.get("/metrics", async (req,res)=>{
 
 try {
 
-
 const users =
 await prisma.user.count();
-
 
 const companies =
 await prisma.company.count();
 
-
 const customers =
 await prisma.customer.count();
 
-
 const auditEvents =
 await prisma.auditLog.count();
-
 
 
 res.json({
@@ -41,11 +36,7 @@ customers,
 
 auditEvents,
 
-servicesOnline:128,
-
-monthlyRevenue:"₦8.4M",
-
-availability:"99.9%",
+availability:"100%",
 
 timestamp:new Date().toISOString()
 
@@ -56,9 +47,6 @@ timestamp:new Date().toISOString()
 
 catch(error){
 
-console.error(error);
-
-
 res.status(500).json({
 
 success:false,
@@ -67,9 +55,7 @@ error:error.message
 
 });
 
-
 }
-
 
 });
 
