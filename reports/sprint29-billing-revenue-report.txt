@@ -1,0 +1,30 @@
+
+XaaSGrid Sprint 29 Certification
+
+Billing Engine: ENABLED
+
+Service Catalog: ENABLED
+
+Pricing Engine: ENABLED
+
+Subscription Engine: ENABLED
+
+Invoice Foundation: ENABLED
+
+Revenue Engine: ENABLED
+
+Marketplace Foundation: ENABLED
+
+Payment Abstraction Layer: ENABLED
+
+Payment Providers:
+- Paystack PLACEHOLDER
+- Flutterwave PLACEHOLDER
+- Stripe PLACEHOLDER
+- Bank Transfer PLACEHOLDER
+- Mobile Money PLACEHOLDER
+
+
+Next:
+Sprint 30 Payment Gateway Integration
+

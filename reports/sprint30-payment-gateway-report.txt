@@ -1,0 +1,45 @@
+
+XaaSGrid Sprint 30 Certification
+
+Payment Gateway Engine
+
+Status: ACTIVATED
+
+
+Providers:
+
+Paystack:
+READY
+
+
+Flutterwave:
+READY
+
+
+Stripe:
+READY
+
+
+Bank Transfer:
+READY
+
+
+Mobile Money:
+READY
+
+
+Webhook Engine:
+READY
+
+
+Reconciliation Foundation:
+READY
+
+
+Production credentials:
+NOT ENABLED
+
+
+Next Sprint:
+Customer Portal & SaaS Experience
+
